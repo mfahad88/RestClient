@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class ApplicationManager {
 	
-	public static Connection connect() {
+	public static Connection connect(String fileName) {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:ecommerce.db";
+            String url = "jdbc:sqlite:"+fileName;
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             
@@ -29,5 +29,4 @@ public class ApplicationManager {
         }*/
 		return conn;
     }
-
 }
